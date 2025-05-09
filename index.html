@@ -65,7 +65,7 @@
 
         .Solos {
             padding: 0;
-            margin: calc(100vh - 25vw - 400px) 0 0 0;
+            margin: calc(100vh - 25vw - 23vw) 0 0 0;
             display: grid;
             grid-template-columns: repeat(4, 0.25fr);
             grid-template-rows: 1fr;
@@ -82,7 +82,7 @@
             padding-top: 10px;
             width: 100%;
             bottom: 0;
-            height: 400px;
+            height: 23vw;
             transform: scale(1.01);
             background-color: #c87a52;
 
@@ -92,25 +92,26 @@
             padding-top: 10px;
             width: 100%;
             bottom: 0;
-            height: 400px;
+            height: 23vw;
             transform: scale(1.01);
             background-color: transparent;
         }
 
         .ParteLogicaInterna {
-            margin: 0 5vw 0 5vw;
+            margin: 0vw 5vw 0 5vw;
             padding-top: 20px;
             border-radius: 25px;
             width: 90vw;
-            height: 40vh;
+            height: 23vw;
             background-color: #00000025;
-            box-shadow: 0px 0px 10px #16161665
         }
 
         /*Termometro*/
         .Termometro {
-            transform: translate(85vw, 0) scale(0.7);
+            transform: translate(-16vw, 0) scale(0.6);
             position: absolute;
+            right: 0;
+            top: 0;
             z-index: 100;
             -webkit-appearance: none;
             appearance: none;
@@ -213,28 +214,12 @@
             pointer-events: none;
         }
 
-        .Legenda {
-            position: absolute;
-            margin-right: 6%;
-            margin-top: 9%;
-            padding: 0.3vw;
-            width: 16vw;
-            right: 0;
-            border: 1px solid rgba(0, 0, 0, 0.24);
-            filter: none;
-            border-radius: 25px;
-            background-image: linear-gradient(-90deg, #ffffff09, #ffffff13);
-            box-shadow: 0px 0px 10px #0000001e;
-        }
-
-        .Legenda img {
-            margin-top: -0.5vw;
-            margin-left: -2vw;
-            width: 18vw;
-        }
+        
 
         /* Checkbox */
         .CheckboxControles {
+            margin-top: 0.8vw;
+            font-size: 0.9vw;
             position: absolute;
             margin-right: 6%;
             padding: 0.3vw;
@@ -251,7 +236,7 @@
             color: #d8a4a4;
             position: absolute;
             width: 500%;
-            transform: translate(65px, -15px);
+            transform: translate(65px, -0.5vw);
         }
 
         .CheckboxControles .switch {
@@ -319,7 +304,7 @@
         .InfoGrafico {
             border: 1px solid rgba(0, 0, 0, 0.24);
             filter: none;
-            margin-top: 1.5vw;
+            margin-top: 3vw;
             margin-left: 1vw;
             border-radius: 25px;
             top: 0;
@@ -350,7 +335,7 @@
         .InfoGraficoMath {
             border: 1px solid rgba(0, 0, 0, 0.24);
             filter: none;
-            margin-top: 1.5vw;
+            margin-top: 3vw;
             margin-left: 42vw;
             border-radius: 25px;
             top: 0;
@@ -362,6 +347,7 @@
         }
 
         .InfoGraficoMath h1 {
+            font-size: 1.9vw;
             text-align: center;
             margin: 0;
         }
@@ -436,10 +422,6 @@
                         <input type="checkbox" id="TemperaturaA" disabled />
                         <div class="slider round"></div>
                     </label>
-                </div>
-                <div class="Legenda">
-                    <img src="IMG/Legenda.png">
-
                 </div>
                 <div class="InfoGrafico">
                     <img src="IMG/PortasLogicas.png">
