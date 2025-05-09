@@ -214,7 +214,7 @@
             pointer-events: none;
         }
 
-        
+
 
         /* Checkbox */
         .CheckboxControles {
@@ -356,340 +356,390 @@
             color: default;
             background-color: rgba(126, 48, 17, 0.13);
         }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        #bloqueio-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+            box-sizing: border-box;
+            z-index: 9999;
+        }
+
+        #bloqueio-mobile h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #conteudo {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
-    <div class="Geral">
-        <canvas id="Chuva" class="Chuva"></canvas>
+    <div id="bloqueio-mobile">
+        <h1>Site indisponível em dispositivos móveis</h1>
+        <p>Por favor, acesse em um computador, pelo link: <br><br> https://nic0lasjoffr3.github.io/ADS-MD-PortasLogicasIrregador/</p>
+    </div>
+
+    <div id="conteudo">
+        <div class="Geral">
+            <canvas id="Chuva" class="Chuva"></canvas>
 
 
-        <div class="Termometro">
-            <input type="range" class="RangeTermometro">
-            <img src="IMG/TermometroFundo.png" class="atras">
-            <img src="IMG/TermometroFrente.png" class="frente">
-            <h3 id="Temperatura">39°</h3>
-        </div>
-        <div class="Solos">
-            <img src="IMG/solo.png" class="solo ">
-            <img src="IMG/solo.png" class="solo ">
-            <img src="IMG/solo.png" class="solo ">
-            <img src="IMG/solo.png" class="solo ">
-        </div>
-        <div class="Irregadores">
-            <div class="Irregador" style="transform: translate(4vw,-14.25vw);">
-                <img src="IMG/Irregador.png">
+            <div class="Termometro">
+                <input type="range" class="RangeTermometro">
+                <img src="IMG/TermometroFundo.png" class="atras">
+                <img src="IMG/TermometroFrente.png" class="frente">
+                <h3 id="Temperatura">39°</h3>
             </div>
-            <div class="Irregador" style="transform: translate(26vw,-14vw);">
-                <img src="IMG/Irregador.png">
+            <div class="Solos">
+                <img src="IMG/solo.png" class="solo ">
+                <img src="IMG/solo.png" class="solo ">
+                <img src="IMG/solo.png" class="solo ">
+                <img src="IMG/solo.png" class="solo ">
             </div>
-            <div class="Irregador" style="transform: translate(53vw,-13.5vw);">
-                <img src="IMG/Irregador.png">
-            </div>
-            <div class="Irregador" style="transform: translate(80vw,-14.40vw);">
-                <img src="IMG/Irregador.png">
-            </div>
-        </div>
-
-        <div class="BackgroundTerra" id="BackgroundTerra"></div>
-        <div class="ParteLogica " id="ParteLogica">
-            <div class="ParteLogicaInterna">
-                <div class="CheckboxControles">
-
-                    <label class="switch" for="CheckChuva">
-                        <h2>Chovendo</h2>
-                        <input type="checkbox" id="CheckChuva" />
-                        <div class="slider round"></div>
-                    </label>
-                    <br>
-
-                    <label class="switch" for="CheckSolo">
-                        <h2>Solo Molhado</h2>
-                        <input type="checkbox" id="CheckSolo" />
-                        <div class="slider round"></div>
-                    </label>
-                    <br>
-
-                    <label class="switch" for="Irregador">
-                        <h2>Irrigador ligado</h2>
-                        <input type="checkbox" id="Irregador" />
-                        <div class="slider round"></div>
-                    </label>
-                    <br>
-
-                    <label class="switch" for="TemperaturaA">
-                        <h2>Temperatura Alta</h2>
-                        <input type="checkbox" id="TemperaturaA" disabled />
-                        <div class="slider round"></div>
-                    </label>
+            <div class="Irregadores">
+                <div class="Irregador" style="transform: translate(4vw,-14.25vw);">
+                    <img src="IMG/Irregador.png">
                 </div>
-                <div class="InfoGrafico">
-                    <img src="IMG/PortasLogicas.png">
-                    <svg id="LinhasLogicas" class="LinhasLogicas" width="400" height="400"></svg>
+                <div class="Irregador" style="transform: translate(26vw,-14vw);">
+                    <img src="IMG/Irregador.png">
+                </div>
+                <div class="Irregador" style="transform: translate(53vw,-13.5vw);">
+                    <img src="IMG/Irregador.png">
+                </div>
+                <div class="Irregador" style="transform: translate(80vw,-14.40vw);">
+                    <img src="IMG/Irregador.png">
+                </div>
+            </div>
+
+            <div class="BackgroundTerra" id="BackgroundTerra"></div>
+            <div class="ParteLogica " id="ParteLogica">
+                <div class="ParteLogicaInterna">
+                    <div class="CheckboxControles">
+
+                        <label class="switch" for="CheckChuva">
+                            <h2>Chovendo</h2>
+                            <input type="checkbox" id="CheckChuva" />
+                            <div class="slider round"></div>
+                        </label>
+                        <br>
+
+                        <label class="switch" for="CheckSolo">
+                            <h2>Solo Molhado</h2>
+                            <input type="checkbox" id="CheckSolo" />
+                            <div class="slider round"></div>
+                        </label>
+                        <br>
+
+                        <label class="switch" for="Irregador">
+                            <h2>Irrigador ligado</h2>
+                            <input type="checkbox" id="Irregador" />
+                            <div class="slider round"></div>
+                        </label>
+                        <br>
+
+                        <label class="switch" for="TemperaturaA">
+                            <h2>Temperatura Alta</h2>
+                            <input type="checkbox" id="TemperaturaA" disabled />
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                    <div class="InfoGrafico">
+                        <img src="IMG/PortasLogicas.png">
+                        <svg id="LinhasLogicas" class="LinhasLogicas" width="400" height="400"></svg>
 
 
 
-                    <script>
-                        const svg = document.getElementById("LinhasLogicas");
-                        function vw(porcentagem) {
-                            return (window.innerWidth * porcentagem) / 100;
-                        }
-                        function desenharLinha(x1, y1, x2, y2, cor = "black", espessura = 8) {
+                        <script>
                             const svg = document.getElementById("LinhasLogicas");
-                            const linha = document.createElementNS("http://www.w3.org/2000/svg", "line");
-                            linha.setAttribute("x1", x1);
-                            linha.setAttribute("y1", y1);
-                            linha.setAttribute("x2", x2);
-                            linha.setAttribute("y2", y2);
-                            linha.setAttribute("stroke", cor);
-                            linha.setAttribute("stroke-width", espessura);
-                            svg.appendChild(linha);
-                            return linha;
-                        }
-                        const linhas = [
-                            [desenharLinha(vw(2.6), vw(5), vw(20), vw(5))],
-
-                            [desenharLinha(vw(2.6), vw(7.75), vw(3.8), vw(7.75))],
-
-                            [desenharLinha(vw(6), vw(7.75), vw(7.1), vw(7.75))],
-
-                            [
-                                desenharLinha(vw(2.6), vw(10.25), vw(8), vw(10.25)),
-                                desenharLinha(vw(5.7), vw(10.25), vw(5.7), vw(12.7)),
-                                desenharLinha(vw(5.55), vw(12.6), vw(17.34), vw(12.6)),
-                                desenharLinha(vw(17.2), vw(10.25), vw(17.2), vw(12.7)),
-                                desenharLinha(vw(17.05), vw(10.25), vw(24.65), vw(10.25)),
-                            ],
-
-                            [desenharLinha(vw(12.25), vw(8.95), vw(13.6), vw(8.95))],
-
-                            [
-                                desenharLinha(vw(15.75), vw(9), vw(17.4), vw(9)),
-                                desenharLinha(vw(17.25), vw(9.15), vw(17.25), vw(7.4)),
-                                desenharLinha(vw(17.1), vw(7.5), vw(20), vw(7.5)),
-                            ],
-
-                            [
-                                desenharLinha(vw(23.75), vw(6.3), vw(26.9), vw(6.3)),
-                                desenharLinha(vw(26.74), vw(6.3), vw(26.74), vw(7.5)),
-                                desenharLinha(vw(26.7), vw(7.35), vw(29), vw(7.35)),
-                            ],
-
-                            [desenharLinha(vw(26.7), vw(10.35), vw(29), vw(10.35))],
-
-                            [desenharLinha(vw(32.7), vw(8.95), vw(37.4), vw(8.95))],
-
-                        ];
-                        let estadoLinhas = [false, false, false, false, false, false, false, false]
-                        setInterval(() => {
-                            i = 0;
-                            while (i < 9) {
-                                for (let linha of linhas[i]) {
-                                    linha.setAttribute("stroke", estadoLinhas[i] ? "#05c5ff" : "#d8a4a4")
-                                }
-                                i++;
+                            function vw(porcentagem) {
+                                return (window.innerWidth * porcentagem) / 100;
                             }
+                            function desenharLinha(x1, y1, x2, y2, cor = "black", espessura = 8) {
+                                const svg = document.getElementById("LinhasLogicas");
+                                const linha = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                                linha.setAttribute("x1", x1);
+                                linha.setAttribute("y1", y1);
+                                linha.setAttribute("x2", x2);
+                                linha.setAttribute("y2", y2);
+                                linha.setAttribute("stroke", cor);
+                                linha.setAttribute("stroke-width", espessura);
+                                svg.appendChild(linha);
+                                return linha;
+                            }
+                            const linhas = [
+                                [desenharLinha(vw(2.6), vw(5), vw(20), vw(5))],
 
-                            estadoLinhas[0] = TemperaturaAcima;
-                            estadoLinhas[1] = SoloMolhado;
-                            estadoLinhas[2] = !SoloMolhado;
-                            estadoLinhas[3] = EstaChuvendo;
+                                [desenharLinha(vw(2.6), vw(7.75), vw(3.8), vw(7.75))],
 
-                            estadoLinhas[4] = SoloMolhado || EstaChuvendo;
-                            estadoLinhas[5] = !estadoLinhas[4];
+                                [desenharLinha(vw(6), vw(7.75), vw(7.1), vw(7.75))],
 
-                            estadoLinhas[6] = estadoLinhas[5] || TemperaturaAcima;
+                                [
+                                    desenharLinha(vw(2.6), vw(10.25), vw(8), vw(10.25)),
+                                    desenharLinha(vw(5.7), vw(10.25), vw(5.7), vw(12.7)),
+                                    desenharLinha(vw(5.55), vw(12.6), vw(17.34), vw(12.6)),
+                                    desenharLinha(vw(17.2), vw(10.25), vw(17.2), vw(12.7)),
+                                    desenharLinha(vw(17.05), vw(10.25), vw(24.65), vw(10.25)),
+                                ],
 
-                            estadoLinhas[7] = !EstaChuvendo;
+                                [desenharLinha(vw(12.25), vw(8.95), vw(13.6), vw(8.95))],
 
-                            estadoLinhas[8] = estadoLinhas[6] && estadoLinhas[7];
+                                [
+                                    desenharLinha(vw(15.75), vw(9), vw(17.4), vw(9)),
+                                    desenharLinha(vw(17.25), vw(9.15), vw(17.25), vw(7.4)),
+                                    desenharLinha(vw(17.1), vw(7.5), vw(20), vw(7.5)),
+                                ],
+
+                                [
+                                    desenharLinha(vw(23.75), vw(6.3), vw(26.9), vw(6.3)),
+                                    desenharLinha(vw(26.74), vw(6.3), vw(26.74), vw(7.5)),
+                                    desenharLinha(vw(26.7), vw(7.35), vw(29), vw(7.35)),
+                                ],
+
+                                [desenharLinha(vw(26.7), vw(10.35), vw(29), vw(10.35))],
+
+                                [desenharLinha(vw(32.7), vw(8.95), vw(37.4), vw(8.95))],
+
+                            ];
+                            let estadoLinhas = [false, false, false, false, false, false, false, false]
+                            setInterval(() => {
+                                i = 0;
+                                while (i < 9) {
+                                    for (let linha of linhas[i]) {
+                                        linha.setAttribute("stroke", estadoLinhas[i] ? "#05c5ff" : "#d8a4a4")
+                                    }
+                                    i++;
+                                }
+
+                                estadoLinhas[0] = TemperaturaAcima;
+                                estadoLinhas[1] = SoloMolhado;
+                                estadoLinhas[2] = !SoloMolhado;
+                                estadoLinhas[3] = EstaChuvendo;
+
+                                estadoLinhas[4] = SoloMolhado || EstaChuvendo;
+                                estadoLinhas[5] = !estadoLinhas[4];
+
+                                estadoLinhas[6] = estadoLinhas[5] || TemperaturaAcima;
+
+                                estadoLinhas[7] = !EstaChuvendo;
+
+                                estadoLinhas[8] = estadoLinhas[6] && estadoLinhas[7];
+
+                            }, 10)
+                        </script>
+                    </div>
+
+                    <div class="InfoGraficoMath">
+                        <h1>
+                            <span id="var-I">I = </span>
+                            <span id="equa-ou">(</span>
+                            <span id="Nequa-NS-Implica-C">¬</span>
+                            <span id="equa-NS-Implica-C">(</span>
+                            <span id="var-NS">¬</span>
+                            <span id="var-S">S</span>
+                            <span id="equa-NS-Implica-C">→</span>
+                            <span id="var-C">C</span>
+                            <span id="equa-NS-Implica-C">)</span>
+                            <span id="equa-ou">∨ </span>
+                            <span id="var-T">T</span>
+                            <span id="equa-ou">)</span>
+                            <span id="equa-e">∧</span>
+                            <span id="var-NC">¬</span>
+                            <span id="var-C">C</span>
+                        </h1>
+                        <h1>
+                            <span id="Inv">I = </span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">(</span>
+                            <span id="var-NS">¬</span>
+                            <span id="var-S-R">S</span>
+                            <span id="Inv">→</span>
+                            <span id="Inv">C</span>
+                            <span id="Inv">)</span>
+                            <span id="Inv">∨ </span>
+                            <span id="Inv">T</span>
+                            <span id="Inv">)</span>
+                            <span id="Inv">∧</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">C</span>
+                        </h1>
+                        <h1>
+                            <span id="Inv">I = </span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="var-NS-R">S</span>
+                            <span id="equa-NS-Implica-C">→</span>
+                            <span id="var-C-R">C</span>
+                            <span id="Inv">)</span>
+                            <span id="Inv">∨ </span>
+                            <span id="Inv">T</span>
+                            <span id="Inv">)</span>
+                            <span id="Inv">∧</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">C</span>
+                        </h1>
+                        <h1>
+                            <span id="Inv">I = </span>
+                            <span id="Inv">(</span>
+                            <span id="Nequa-NS-Implica-C">¬</span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">S</span>
+                            <span id="equa-NS-Implica-C-R">→</span>
+                            <span id="Inv">C</span>
+                            <span id="Inv">)</span>
+                            <span id="Inv">∨ </span>
+                            <span id="Inv">T</span>
+                            <span id="Inv">)</span>
+                            <span id="Inv">∧</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">C</span>
+                        </h1>
+                        <h1>
+                            <span id="Inv">I = </span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">S</span>
+                            <span id="Nequa-NS-Implica-C-R">→</span>
+                            <span id="Inv">C</span>
+                            <span id="Inv">)</span>
+                            <span id="equa-ou">∨ </span>
+                            <span id="var-T-R">T</span>
+                            <span id="Inv">)</span>
+                            <span id="Inv">∧</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">C</span>
+                        </h1>
+                        <h1>
+                            <span id="Inv">I = </span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">S</span>
+                            <span id="Inv">→</span>
+                            <span id="Inv">C</span>
+                            <span id="Inv">)</span>
+                            <span id="Inv">∨ </span>
+                            <span id="Inv">T</span>
+                            <span id="Inv">)</span>
+                            <span id="Inv">∧</span>
+                            <span id="var-NC">¬</span>
+                            <span id="var-C-R">C</span>
+                        </h1>
+                        <h1>
+                            <span id="Inv">I = </span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">S</span>
+                            <span id="Inv">→</span>
+                            <span id="Inv">C</span>
+                            <span id="Inv">)</span>
+                            <span id="equa-ou-R">∨ </span>
+                            <span id="Inv">T</span>
+                            <span id="Inv">)</span>
+                            <span id="equa-e">∧</span>
+                            <span id="Inv">¬</span>
+                            <span id="var-NC-R">C</span>
+                        </h1>
+                        <h1>
+                            <span id="var-I-R">I </span>
+                            <span id="var-I">= </span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">(</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">S</span>
+                            <span id="Inv">→</span>
+                            <span id="Inv">C</span>
+                            <span id="Inv">)</span>
+                            <span id="Inv">∨ </span>
+                            <span id="Inv">T</span>
+                            <span id="Inv">)</span>
+                            <span id="equa-e-R">∧</span>
+                            <span id="Inv">¬</span>
+                            <span id="Inv">C</span>
+                        </h1>
+                    </div>
+                    <script>
+                        setInterval(() => {
+                            corVar("var-T", TemperaturaAcima);
+                            corVar("var-S", SoloMolhado);
+                            corVar("var-C", EstaChuvendo);
+                            corVar("var-NC", !EstaChuvendo);
+                            corVar("var-I", IrregadorLigado);
+                            corVar("var-NS", !SoloMolhado);
+                            corVar("var-NT", !TemperaturaAcima);
+                            corVar("equa-NS-Implica-C", SoloMolhado || EstaChuvendo);
+                            corVar("Nequa-NS-Implica-C", !(SoloMolhado || EstaChuvendo));
+                            corVar("equa-ou", !(SoloMolhado || EstaChuvendo) || TemperaturaAcima);
+                            corVar("equa-e", (!(SoloMolhado || EstaChuvendo) || TemperaturaAcima) && !EstaChuvendo);
+                            corVar("var-S-R", SoloMolhado, true);
+                            corVar("var-NS-R", !SoloMolhado, true);
+                            corVar("var-C-R", EstaChuvendo, true);
+                            corVar("equa-NS-Implica-C-R", SoloMolhado || EstaChuvendo, true);
+                            corVar("equa-ou-R", !(SoloMolhado || EstaChuvendo) || TemperaturaAcima, true);
+                            corVar("Nequa-NS-Implica-C-R", !(SoloMolhado || EstaChuvendo), true);
+                            corVar("var-T-R", TemperaturaAcima, true);
+                            corVar("var-NT-R", !TemperaturaAcima, true);
+                            corVar("var-NC-R", !EstaChuvendo, true);
+                            corVar("equa-e-R", (!(SoloMolhado || EstaChuvendo) || TemperaturaAcima) && !EstaChuvendo, true);
+                            corVar("Inv", false, false, true);
+                            corVar("var-I-R", IrregadorLigado, true);
+
 
                         }, 10)
+
+                        function corVar(id, cond, valorReal = false, inv = false) {
+                            listvar = document.querySelectorAll("#" + id);
+                            for (vari of listvar) {
+                                if (valorReal) {
+                                    vari.innerText = cond ? "T" : "F"
+                                }
+                                vari.style.color = inv ? "#00000008" : cond ? "#05c5ff" : "#d8a4a4"
+                            }
+                        }
                     </script>
                 </div>
-
-                <div class="InfoGraficoMath">
-                    <h1>
-                        <span id="var-I">I = </span>
-                        <span id="equa-ou">(</span>
-                        <span id="Nequa-NS-Implica-C">¬</span>
-                        <span id="equa-NS-Implica-C">(</span>
-                        <span id="var-NS">¬</span>
-                        <span id="var-S">S</span>
-                        <span id="equa-NS-Implica-C">→</span>
-                        <span id="var-C">C</span>
-                        <span id="equa-NS-Implica-C">)</span>
-                        <span id="equa-ou">∨ </span>
-                        <span id="var-T">T</span>
-                        <span id="equa-ou">)</span>
-                        <span id="equa-e">∧</span>
-                        <span id="var-NC">¬</span>
-                        <span id="var-C">C</span>
-                    </h1>
-                    <h1>
-                        <span id="Inv">I = </span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">(</span>
-                        <span id="var-NS">¬</span>
-                        <span id="var-S-R">S</span>
-                        <span id="Inv">→</span>
-                        <span id="Inv">C</span>
-                        <span id="Inv">)</span>
-                        <span id="Inv">∨ </span>
-                        <span id="Inv">T</span>
-                        <span id="Inv">)</span>
-                        <span id="Inv">∧</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">C</span>
-                    </h1>
-                    <h1>
-                        <span id="Inv">I = </span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="var-NS-R">S</span>
-                        <span id="equa-NS-Implica-C">→</span>
-                        <span id="var-C-R">C</span>
-                        <span id="Inv">)</span>
-                        <span id="Inv">∨ </span>
-                        <span id="Inv">T</span>
-                        <span id="Inv">)</span>
-                        <span id="Inv">∧</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">C</span>
-                    </h1>
-                    <h1>
-                        <span id="Inv">I = </span>
-                        <span id="Inv">(</span>
-                        <span id="Nequa-NS-Implica-C">¬</span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">S</span>
-                        <span id="equa-NS-Implica-C-R">→</span>
-                        <span id="Inv">C</span>
-                        <span id="Inv">)</span>
-                        <span id="Inv">∨ </span>
-                        <span id="Inv">T</span>
-                        <span id="Inv">)</span>
-                        <span id="Inv">∧</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">C</span>
-                    </h1>
-                    <h1>
-                        <span id="Inv">I = </span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">S</span>
-                        <span id="Nequa-NS-Implica-C-R">→</span>
-                        <span id="Inv">C</span>
-                        <span id="Inv">)</span>
-                        <span id="equa-ou">∨ </span>
-                        <span id="var-T-R">T</span>
-                        <span id="Inv">)</span>
-                        <span id="Inv">∧</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">C</span>
-                    </h1>
-                    <h1>
-                        <span id="Inv">I = </span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">S</span>
-                        <span id="Inv">→</span>
-                        <span id="Inv">C</span>
-                        <span id="Inv">)</span>
-                        <span id="Inv">∨ </span>
-                        <span id="Inv">T</span>
-                        <span id="Inv">)</span>
-                        <span id="Inv">∧</span>
-                        <span id="var-NC">¬</span>
-                        <span id="var-C-R">C</span>
-                    </h1>
-                    <h1>
-                        <span id="Inv">I = </span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">S</span>
-                        <span id="Inv">→</span>
-                        <span id="Inv">C</span>
-                        <span id="Inv">)</span>
-                        <span id="equa-ou-R">∨ </span>
-                        <span id="Inv">T</span>
-                        <span id="Inv">)</span>
-                        <span id="equa-e">∧</span>
-                        <span id="Inv">¬</span>
-                        <span id="var-NC-R">C</span>
-                    </h1>
-                    <h1>
-                        <span id="var-I-R">I </span>
-                        <span id="var-I">= </span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">(</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">S</span>
-                        <span id="Inv">→</span>
-                        <span id="Inv">C</span>
-                        <span id="Inv">)</span>
-                        <span id="Inv">∨ </span>
-                        <span id="Inv">T</span>
-                        <span id="Inv">)</span>
-                        <span id="equa-e-R">∧</span>
-                        <span id="Inv">¬</span>
-                        <span id="Inv">C</span>
-                    </h1>
-                </div>
-                <script>
-                    setInterval(() => {
-                        corVar("var-T", TemperaturaAcima);
-                        corVar("var-S", SoloMolhado);
-                        corVar("var-C", EstaChuvendo);
-                        corVar("var-NC", !EstaChuvendo);
-                        corVar("var-I", IrregadorLigado);
-                        corVar("var-NS", !SoloMolhado);
-                        corVar("var-NT", !TemperaturaAcima);
-                        corVar("equa-NS-Implica-C", SoloMolhado || EstaChuvendo);
-                        corVar("Nequa-NS-Implica-C", !(SoloMolhado || EstaChuvendo));
-                        corVar("equa-ou", !(SoloMolhado || EstaChuvendo) || TemperaturaAcima);
-                        corVar("equa-e", (!(SoloMolhado || EstaChuvendo) || TemperaturaAcima) && !EstaChuvendo);
-                        corVar("var-S-R", SoloMolhado, true);
-                        corVar("var-NS-R", !SoloMolhado, true);
-                        corVar("var-C-R", EstaChuvendo, true);
-                        corVar("equa-NS-Implica-C-R", SoloMolhado || EstaChuvendo, true);
-                        corVar("equa-ou-R", !(SoloMolhado || EstaChuvendo) || TemperaturaAcima, true);
-                        corVar("Nequa-NS-Implica-C-R", !(SoloMolhado || EstaChuvendo), true);
-                        corVar("var-T-R", TemperaturaAcima, true);
-                        corVar("var-NT-R", !TemperaturaAcima, true);
-                        corVar("var-NC-R", !EstaChuvendo, true);
-                        corVar("equa-e-R", (!(SoloMolhado || EstaChuvendo) || TemperaturaAcima) && !EstaChuvendo, true);
-                        corVar("Inv", false, false, true);
-                        corVar("var-I-R", IrregadorLigado, true);
-
-
-                    }, 10)
-
-                    function corVar(id, cond, valorReal = false, inv = false) {
-                        listvar = document.querySelectorAll("#" + id);
-                        for (vari of listvar) {
-                            if (valorReal) {
-                                vari.innerText = cond ? "T" : "F"
-                            }
-                            vari.style.color = inv ? "#00000008" : cond ? "#05c5ff" : "#d8a4a4"
-                        }
-                    }
-                </script>
             </div>
         </div>
     </div>
     <script>
+        function isMobile() {
+      return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+    }
+
+    if (isMobile()) {
+      document.getElementById('bloqueio-mobile').style.display = 'block';
+      document.getElementById('conteudo').style.display = 'none';
+    }
+
+
 
         let _SoloMolhado = false;
         let _EstaChuvendo = false;
